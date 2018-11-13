@@ -1,6 +1,7 @@
 import shodan
-import sys
 import json
+import time
+from datetime import datetime
 
 apikey = "<apikey>"
 
@@ -17,10 +18,11 @@ for i in hosts:
     try:
         info = api.host(i)
         results[i] = info
-        # API rate limit of 1 request/second
-        sleep(1)
     except shodan.APIError,e:
         print("Error:{}".format(e))
+    # API rate limit of 1 request/second
+    time.sleep(1)
+
 
 with open('shodan_results_all.json','w') as all_info:
     json.dump(results,all_info,indent=4)
