@@ -37,7 +37,7 @@ for entry in results:
 
     print ip,ports,hostnames,os,org
     for item in items:
-        print("Port: {}\nBanner: {}\n".format(item['port'], item['data']))
+        print("Port: {}\nBanner: {}".format(item['port'], item['data']))
     print "\n"
 
 print("for more info check shodan_results_all.json file")
