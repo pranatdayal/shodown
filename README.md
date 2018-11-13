@@ -1,6 +1,10 @@
 # shodown
 Script utilizing Shodan API to query hosts 
 
+Before running install shodan API: 
+
+    easy_install shodan 
+
 Takes in a file called ip.list (see example file) 
 and saves the output to shodan_results_all.json. 
 
