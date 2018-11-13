@@ -17,6 +17,8 @@ for i in hosts:
     try:
         info = api.host(i)
         results[i] = info
+        # API rate limit of 1 request/second
+        sleep(1)
     except shodan.APIError,e:
         print("Error:{}".format(e))
 
